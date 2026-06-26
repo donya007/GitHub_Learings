@@ -52,7 +52,6 @@ jobs:
               "tenantId":"${{ secrets.AZURE_TENANT_ID }}"
             }
 
-      - run: az logout
       - run: az login
       - run: az account show
     
