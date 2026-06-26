@@ -1,4 +1,4 @@
-name: Ezaz GitHub Action CI Pipeline
+name: Ezaz GitHub Action CI Pipeline1
 
 # on: [push, pull_request]
 on:
