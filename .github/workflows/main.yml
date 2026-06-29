@@ -37,5 +37,6 @@ jobs:
         run: |
           terraform init
           terraform validate
+          terraform import azurerm_resource_group.rg "/subscriptions/ddece533-2a97-4b73-8056-67abfc878c00/resourceGroups/Ezaz-GitHubAction-rg"
           terraform plan
           terraform apply --auto-approve
