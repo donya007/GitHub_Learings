@@ -2,7 +2,7 @@ name: Ezaz GitHub Action CI Pipeline-29.6.2026
 
 # on: [push]
 on:
-  workflow_dispatch:
+  push
 
 
 permissions:
