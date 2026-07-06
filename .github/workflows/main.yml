@@ -37,11 +37,15 @@ jobs:
           inlineScript: |
             az account show
 
+      - name: Change Environment
+        run: "cd ../../environments/dev"
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Commands
         run: |
+          
           terraform init
           terraform validate
           terraform plan
