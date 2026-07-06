@@ -2,7 +2,7 @@ name: Ezaz GitHub Action CI Pipeline-29.6.2026
 
 # on: [push]
 on:
-  push
+  workflow_dispatch:
 
 
 permissions:
@@ -23,20 +23,26 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Azure CLI script
-        uses: azure/cli@v2
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Terraform Commands
+      - name: linux commands
         run: |
-          terraform init
-          terraform validate
-          # terraform import azurerm_resource_group.rg "/subscriptions/ddece533-2a97-4b73-8056-67abfc878c00/resourceGroups/Ezaz-GitHubAction-rg"
-          terraform plan
-          terraform apply --auto-approve
+          pwd
+          whoami
+          tooch nasha.txt
+          ls
+
+      # - name: Azure CLI script
+      #   uses: azure/cli@v2
+      #   with:
+      #     azcliversion: latest
+      #     inlineScript: |
+      #       az account show
+
+      # - name: Setup Terraform
+      #   uses: hashicorp/setup-terraform@v3
+
+      # - name: Terraform Commands
+      #   run: |
+      #     terraform init
+      #     terraform validate
+      #     terraform plan
+      #     terraform apply --auto-approve
