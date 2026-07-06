@@ -1,23 +1,23 @@
-module "resource_group" {
-    source = "../../modules/azurerm_resource_group"
-    rgs = var.rgs
-}
+# module "resource_group" {
+#     source = "../../modules/azurerm_resource_group"
+#     rgs = var.rgs
+# }
 
 
-module "virtual_networks" {
-    source = "../../modules/azurerm_virtual_network"
-    vnets = var.vnets
+# module "virtual_networks" {
+#     source = "../../modules/azurerm_virtual_network"
+#     vnets = var.vnets
 
-    depends_on = [ module.resource_group ]
-}
+#     depends_on = [ module.resource_group ]
+# }
 
 
-module "subnets" {
-    source = "../../modules/azurerm_subnet"
-    snets = var.snets
+# module "subnets" {
+#     source = "../../modules/azurerm_subnet"
+#     snets = var.snets
 
-    depends_on = [ module.virtual_networks ]
-}
+#     depends_on = [ module.virtual_networks ]
+# }
 
 
 
