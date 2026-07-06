@@ -10,7 +10,7 @@ permissions:
   contents: read
   
 jobs:
-  Test-job-3:
+  Test-job-1:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
@@ -30,19 +30,19 @@ jobs:
           touch nasha.txt
           ls
 
-      # - name: Azure CLI script
-      #   uses: azure/cli@v2
-      #   with:
-      #     azcliversion: latest
-      #     inlineScript: |
-      #       az account show
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az account show
 
-      # - name: Setup Terraform
-      #   uses: hashicorp/setup-terraform@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
 
-      # - name: Terraform Commands
-      #   run: |
-      #     terraform init
-      #     terraform validate
-      #     terraform plan
-      #     terraform apply --auto-approve
+      - name: Terraform Commands
+        run: |
+          terraform init
+          terraform validate
+          terraform plan
+          terraform apply --auto-approve
