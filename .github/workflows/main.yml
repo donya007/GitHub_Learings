@@ -27,7 +27,7 @@ jobs:
         run: |
           pwd
           whoami
-          tooch nasha.txt
+          touch nasha.txt
           ls
 
       # - name: Azure CLI script
